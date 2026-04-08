@@ -1,4 +1,4 @@
-import re
+п»їimport re
 
 class TextAnalyzer:
     def read_file(self, file_path):
@@ -6,11 +6,11 @@ class TextAnalyzer:
             return f.read()
 
     def count_words(self, text):
-        # Розділювачі: кома, пробіл, двокрапка, крапка з комою
+        # Р РѕР·РґС–Р»СЋРІР°С‡С–: РєРѕРјР°, РїСЂРѕР±С–Р», РґРІРѕРєСЂР°РїРєР°, РєСЂР°РїРєР° Р· РєРѕРјРѕСЋ
         words = re.split(r'[ ,:;]+', text)
         return len([w for w in words if w.strip()])
 
     def count_sentences(self, text):
-        # Символи завершення: . ! ? ...
+        # РЎРёРјРІРѕР»Рё Р·Р°РІРµСЂС€РµРЅРЅСЏ: . ! ? ...
         sentences = re.split(r'\.\.\.|[.!?]', text)
         return len([s for s in sentences if s.strip()])
