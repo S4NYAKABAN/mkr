@@ -9,3 +9,8 @@ class TextAnalyzer:
         # Розділювачі: кома, пробіл, двокрапка, крапка з комою
         words = re.split(r'[ ,:;]+', text)
         return len([w for w in words if w.strip()])
+
+    def count_sentences(self, text):
+        # Символи завершення: . ! ? ...
+        sentences = re.split(r'\.\.\.|[.!?]', text)
+        return len([s for s in sentences if s.strip()])
